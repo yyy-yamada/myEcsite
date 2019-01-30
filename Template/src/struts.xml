@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+ <!-- 決まり文句（毎回固定）====================================================== -->
+
+
+<!-- ◆全体の設計図（struts.xml） -->
+
+<struts>
+
+	<!-- struts2の挙動を制御する設定 -->
+	<constant name="struts.devMode" value="true"/>
+
+	<!-- このプロジェクトで使用するActionクラスのファイルが保存されているパッケージ名 -->
+	<package name="com.internousdev.template.action" extends="struts-default">
+
+		<!-- <action name ="使用するActionクラス名"
+	       class="Actionクラスのパッケージ名.クラス名"
+	       method ="呼び出されるメソッド名 >
+
+         < result name="○○">○○が返された場合移動するファイル名</result>
+    	 </action>
+		-->
+
+		<!-- HomeAction -->
+		<action name="HomeAction" class="com.internousdev.template.action.HomeAction"
+		method="execute">
+			<result name="success">login.jsp</result>
+		</action>
+
+		<!-- LoginAction -->
+		<action name="LoginAction" class="com.internousdev.template.action.LoginAction"
+		method="execute">
+			<result name="success">buyItem.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<!-- UserCreateAction -->
+		<action name="UserCreateAction" class="com.internousdev.template.action.UserCreateAction"
+		method="execute">
+			<result name="success">userCreate.jsp</result>
+		</action>
+
+		<!-- UserCreateConfirmAction -->
+		<action name="UserCreateConfirmAction" class="com.internousdev.template.action.UserCreateConfirmAction"
+		method="execute">
+			<result name="success">userCreateConfirm.jsp</result>
+			<result name="error">userCreate.jsp</result>
+		</action>
+
+		<!-- UserCreateCompleteAction -->
+		<action name="UserCreateCompleteAction" class="com.internousdev.template.action.UserCreateCompleteAction"
+		method="execute">
+			<result name="success">userCreateComplete.jsp</result>
+		</action>
+
+		<!-- BuyItemAction -->
+		<action name="BuyItemAction" class="com.internousdev.template.action.BuyItemAction"
+		method="execute">
+			<result name="success">buyItemConfirm.jsp</result>
+		</action>
+
+		<!-- BuyItemConfirmAction -->
+		<action name="BuyItemConfirmAction" class="com.internousdev.template.action.BuyItemConfirmAction"
+		method="execute">
+			<result name="success">buyItemComplete.jsp</result>
+		</action>
+
+		<!-- MyPageAction -->
+		<action name="MyPageAction" class="com.internousdev.template.action.MyPageAction"
+		method="execute">
+			<result name="success">myPage.jsp</result>
+		</action>
+
+	</package>
+</struts>

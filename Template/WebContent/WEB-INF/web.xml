@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+id="WebApp_ID" version="3.1">
+
+<!-- ◆初期設定（web.xml） -->
+
+<!-- プロジェクト名 -->
+<display-name>Template</display-name>
+
+	<!-- 初期画面（初回アクセスで表示させたいJSPファイルを設定） -->
+	<welcome-file-list>
+		<welcome-file>home.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- Struts2を使用するための設定 -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class> <!-- Struts2の制御担当クラス（固定） -->
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern> <!-- 適用する範囲(URL)：このプロジェクト配下(/)の全ページ(*)を表す（固定） -->
+	</filter-mapping>
+
+</web-app>
